@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="SkillForge: 게임 개발자를 위한 스킬 데이터 관리 웹사이트. MySQL을 활용한 스킬 및 제작자 정보 관리 서비스." />
+  <title>SkillForge | 게임 스킬 데이터베이스</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="background-glow" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="site-header">
+      <button type="button" class="brand" data-action="nav" data-view="all" aria-label="SkillForge 홈">
+        <span class="brand-symbol">✦</span>
+        <span>SKILL<span class="brand-accent">FORGE</span><small>GAME DATA LAB</small></span>
+      </button>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <button type="button" class="nav-btn active" data-action="nav" data-view="all">스킬 라이브러리</button>
+        <button type="button" class="nav-btn" data-action="nav" data-view="mine">내 스킬</button>
+        <button type="button" class="nav-btn" data-action="nav" data-view="join">JOIN 조회</button>
+        <button type="button" class="nav-btn" data-action="nav" data-view="profile">마이페이지</button>
+      </nav>
+      <div id="auth-actions" class="header-actions">
+        <button type="button" class="btn btn-ghost" data-action="login">로그인</button>
+        <button type="button" class="btn btn-primary" data-action="register">회원가입</button>
+      </div>
+    </header>
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> DATABASE × GAME DEVELOPMENT</div>
+          <h1>게임의 능력을<br /><em>데이터로 설계하다.</em></h1>
+          <p>데미지부터 쿨타임까지, 나만의 게임 스킬을 등록하고 관리하세요. 모든 스킬은 MySQL에 저장되며 제작자와 연결됩니다.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary btn-large" data-action="create">+ 새 스킬 등록</button>
+            <button type="button" class="btn btn-outline btn-large" data-action="nav" data-view="join">제작자별 조회 <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="hero-stats">
+            <div><strong id="stat-skills">0</strong><span>등록된 스킬</span></div>
+            <div class="stat-divider"></div>
+            <div><strong id="stat-creators">0</strong><span>참여 제작자</span></div>
+            <div class="stat-divider"></div>
+            <div><strong>9</strong><span>스킬 속성</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-1"></div><div class="orb orb-2"></div>
+          <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div>
+          <div class="core-icon">✦</div>
+          <div class="floating floating-top"><span>✷</span><div><b>Damage</b><small>+120 DMG</small></div></div>
+          <div class="floating floating-bottom"><span>◈</span><div><b>Cooldown</b><small>12.0 SEC</small></div></div>
+        </div>
+      </section>
+      <section id="content" class="content-section" aria-live="polite">
+        <div class="loading-panel">데이터베이스에서 스킬 정보를 불러오는 중...</div>
+      </section>
+    </main>
+    <footer class="footer"><span>✦ SKILLFORGE</span><span>회원 CRUD · 스킬 CRUD · SQL INNER JOIN · bcrypt</span><span>데이터베이스 프로젝트</span></footer>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

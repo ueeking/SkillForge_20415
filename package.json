@@ -1,0 +1,20 @@
+{
+  "name": "skillforge-db-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Game skill CRUD web app with MySQL JOIN and bcrypt authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js",
+    "test": "node tests/static-check.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.1"
+  }
+}
